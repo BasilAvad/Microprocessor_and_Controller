@@ -1,0 +1,6 @@
+Coff-Dump Utility V1.2
+Copyright (c) 2003 Custom Computer Services, Inc.
+-------------------------------------------------
+
+Error while creating the coff object:
+Coff file 'D:\2020-2021 Güz\Mikroiþlemci ve Denetleyici\Micro Uygulamalarý\main.cof' found a wrong reference to the string table.

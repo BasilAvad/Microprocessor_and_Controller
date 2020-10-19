@@ -1,0 +1,34 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.015
+Compiler=PCM
+CCSVersion=5.015
+[Target Data]
+FileList=main.c
+[Directories]
+Include=D:\Program Files\PICC\Devices\;D:\Program Files\PICC\Drivers\
+[D:\2020-2021 Güz\Mikroiþlemci ve Denetleyici\Micro Uygulamalarý\2\main]
+Type=4
+[mru-list]
+1=main.c
+[Opened Files]
+1=..\main.c
+2=..\main.cof.txt
+3=..\main.esym
+4=..\main.h
+5=..\main.hex
+6=..\main.lst
+7=..\main.STA
+8=..\main.sym
+9=
+10=..\main.sym
+11=..\main.tre
+12=..\main.xsym
+13=..\New Project.pdsprj.DESKTOP-6D0AEQ9.BASÝL AVAD.workspace
+14=
+[main.c]
+Type=4
+[Units]
+Count=1
+1=main (main)

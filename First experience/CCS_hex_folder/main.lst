@@ -1,0 +1,75 @@
+CCS PCM C Compiler, Version 5.015, 5967               13-Eki-20 11:57
+
+               Filename:   D:\2020-2021 Güz\Mikroiþlemci ve Denetleyici\Micro Uygulamalarý\main.lst
+
+               ROM used:   33 words (0%)
+                           Largest free fragment is 2048
+               RAM used:   5 (1%) at main() level
+                           5 (1%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   004
+0003:  NOP
+.................... #include <16F877A.h> 
+.................... //////////// Standard Header file for the PIC16F877A device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F877A 
+....................  
+.................... #list 
+....................  
+.................... #fuses HS,NOWDT,NOPROTECT,NOLVP 
+.................... #use delay(clock=20000000) 
+....................  
+.................... void main() 
+0004:  MOVF   03,W
+0005:  ANDLW  1F
+0006:  MOVWF  03
+0007:  BSF    03.5
+0008:  BSF    1F.0
+0009:  BSF    1F.1
+000A:  BSF    1F.2
+000B:  BCF    1F.3
+000C:  MOVLW  07
+000D:  MOVWF  1C
+000E:  BCF    03.7
+.................... { 
+.................... basla: 
+.................... if(input(PIN_A0)) 
+000F:  BSF    05.0
+0010:  BCF    03.5
+0011:  BTFSS  05.0
+0012:  GOTO   019
+.................... output_b(255); 
+0013:  BSF    03.5
+0014:  CLRF   06
+0015:  MOVLW  FF
+0016:  BCF    03.5
+0017:  MOVWF  06
+0018:  GOTO   01E
+.................... else 
+.................... output_b(1); 
+0019:  BSF    03.5
+001A:  CLRF   06
+001B:  MOVLW  01
+001C:  BCF    03.5
+001D:  MOVWF  06
+.................... goto basla; 
+001E:  BSF    03.5
+001F:  GOTO   00F
+.................... } 
+0020:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F72   HS NOWDT PUT BROWNOUT NOLVP NOCPD NOWRT NODEBUG NOPROTECT

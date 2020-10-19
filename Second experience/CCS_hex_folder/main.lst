@@ -1,0 +1,134 @@
+CCS PCM C Compiler, Version 5.015, 5967               13-Eki-20 13:23
+
+               Filename:   D:\2020-2021 Güz\Mikroiþlemci ve Denetleyici\Micro Uygulamalarý\2\main.lst
+
+               ROM used:   77 words (1%)
+                           Largest free fragment is 2048
+               RAM used:   6 (2%) at main() level
+                           7 (2%) worst case
+               Stack used: 1 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   019
+0003:  NOP
+.................... #include <16F877A.h>     
+.................... //////////// Standard Header file for the PIC16F877A device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F877A 
+....................  
+.................... #list 
+....................  
+.................... #fuses XT,NOWDT,NOPROTECT,NOBROWNOUT,NOLVP,NOPUT,NOWRT,NODEBUG,NOCPD  
+.................... #use delay(clock=4000000)    
+0004:  MOVLW  22
+0005:  MOVWF  04
+0006:  BCF    03.7
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   018
+000A:  MOVLW  01
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  4A
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  GOTO   016
+0016:  DECFSZ 00,F
+0017:  GOTO   00A
+0018:  RETURN
+.................... #use fast_io(b)  
+.................... void main () 
+0019:  MOVF   03,W
+001A:  ANDLW  1F
+001B:  MOVWF  03
+001C:  BSF    03.5
+001D:  BSF    1F.0
+001E:  BSF    1F.1
+001F:  BSF    1F.2
+0020:  BCF    1F.3
+0021:  MOVLW  07
+0022:  MOVWF  1C
+0023:  BCF    03.7
+.................... { 
+....................    setup_psp(PSP_DISABLED);         
+0024:  BCF    09.4
+....................    setup_timer_1(T1_DISABLED);      
+0025:  BCF    03.5
+0026:  CLRF   10
+....................    setup_timer_2(T2_DISABLED,0,1);  
+0027:  MOVLW  00
+0028:  MOVWF  78
+0029:  MOVWF  12
+002A:  MOVLW  00
+002B:  BSF    03.5
+002C:  MOVWF  12
+....................    setup_adc_ports(NO_ANALOGS);     
+002D:  BSF    1F.0
+002E:  BSF    1F.1
+002F:  BSF    1F.2
+0030:  BCF    1F.3
+....................    setup_adc(ADC_OFF);              
+0031:  BCF    03.5
+0032:  BCF    1F.0
+....................    setup_CCP1(CCP_OFF);             
+0033:  MOVLW  F0
+0034:  ANDWF  17,F
+....................    setup_CCP2(CCP_OFF);             
+0035:  ANDWF  1D,F
+....................  
+....................    set_tris_b(0x00);     
+0036:  MOVLW  00
+0037:  BSF    03.5
+0038:  MOVWF  06
+....................  
+....................    output_b(0x00);        
+0039:  BCF    03.5
+003A:  CLRF   06
+....................  
+....................    basla:                
+....................  
+....................    output_high(pin_b0);   
+003B:  BSF    06.0
+....................    delay_ms(500);         
+003C:  MOVLW  02
+003D:  MOVWF  21
+003E:  MOVLW  FA
+003F:  MOVWF  22
+0040:  CALL   004
+0041:  DECFSZ 21,F
+0042:  GOTO   03E
+....................    output_low(pin_b0);    
+0043:  BCF    06.0
+....................    delay_ms(500);         
+0044:  MOVLW  02
+0045:  MOVWF  21
+0046:  MOVLW  FA
+0047:  MOVWF  22
+0048:  CALL   004
+0049:  DECFSZ 21,F
+004A:  GOTO   046
+....................  
+....................    goto basla;            
+004B:  GOTO   03B
+.................... } 
+....................  
+004C:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F39   XT NOWDT NOPUT NOBROWNOUT NOLVP NOCPD NOWRT NODEBUG NOPROTECT
