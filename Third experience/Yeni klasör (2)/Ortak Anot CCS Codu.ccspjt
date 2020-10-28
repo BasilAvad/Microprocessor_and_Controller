@@ -1,0 +1,19 @@
+[PROJECT]
+Target=Ortak Anot CCS Codu.hex
+Processor_Text=PIC16F877A
+CCSVersion=5.015
+Compiler=PCM
+[Target Data]
+FileList=Ortak Anot CCS Codu.c
+[Directories]
+Include=D:\Program Files\PICC\Devices\;D:\Program Files\PICC\Drivers\
+[Ortak Anot CCS Codu.c]
+Type=4
+[mru-list]
+1=Ortak Anot CCS Codu.c
+[Opened Files]
+1=Ortak Anot CCS Codu.c
+2=
+[Units]
+Count=1
+1=Ortak Anot CCS Codu (main)

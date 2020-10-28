@@ -1,0 +1,144 @@
+CCS PCM C Compiler, Version 5.015, 5967               27-Eki-20 00:40
+
+               Filename:   D:\2020-2021 Güz\Mikroiþlemci ve Denetleyici\Micro Uygulamalarý\Yeni klasör (2)\Ortak Anot CCS Codu.lst
+
+               ROM used:   95 words (1%)
+                           Largest free fragment is 2048
+               RAM used:   23 (6%) at main() level
+                           24 (7%) worst case
+               Stack used: 1 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   01A
+0003:  NOP
+....................  
+.................... #include <16F877A.h> 
+.................... //////////// Standard Header file for the PIC16F877A device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F877A 
+....................  
+.................... #list 
+....................  
+.................... #fuses HS,NOWDT,NOPROTECT,NOLVP 
+.................... #use delay(clock=20000000) 
+0004:  MOVLW  32
+0005:  MOVWF  04
+0006:  BCF    03.7
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   017
+000A:  MOVLW  06
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  7B
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  DECFSZ 00,F
+0016:  GOTO   00A
+0017:  BCF    0A.3
+0018:  BCF    0A.4
+0019:  GOTO   056 (RETURN)
+.................... char dizi[]={0x40, 0x79, 0x24, 0x30, 0x19, 0x12, 0x03, 0x78, 0x00, 0x10, 0x08, 0x03, 0x46, 0x21, 0x06, 0x0E}; 
+*
+0026:  MOVLW  40
+0027:  BCF    03.5
+0028:  MOVWF  20
+0029:  MOVLW  79
+002A:  MOVWF  21
+002B:  MOVLW  24
+002C:  MOVWF  22
+002D:  MOVLW  30
+002E:  MOVWF  23
+002F:  MOVLW  19
+0030:  MOVWF  24
+0031:  MOVLW  12
+0032:  MOVWF  25
+0033:  MOVLW  03
+0034:  MOVWF  26
+0035:  MOVLW  78
+0036:  MOVWF  27
+0037:  CLRF   28
+0038:  MOVLW  10
+0039:  MOVWF  29
+003A:  MOVLW  08
+003B:  MOVWF  2A
+003C:  MOVLW  03
+003D:  MOVWF  2B
+003E:  MOVLW  46
+003F:  MOVWF  2C
+0040:  MOVLW  21
+0041:  MOVWF  2D
+0042:  MOVLW  06
+0043:  MOVWF  2E
+0044:  MOVLW  0E
+0045:  MOVWF  2F
+.................... char x=0; 
+.................... void main() 
+*
+001A:  MOVF   03,W
+001B:  ANDLW  1F
+001C:  MOVWF  03
+001D:  CLRF   30
+001E:  BSF    03.5
+001F:  BSF    1F.0
+0020:  BSF    1F.1
+0021:  BSF    1F.2
+0022:  BCF    1F.3
+0023:  MOVLW  07
+0024:  MOVWF  1C
+0025:  BCF    03.7
+.................... { 
+.................... while(1) 
+.................... { 
+.................... output_b(dizi[x]); 
+*
+0046:  MOVLW  20
+0047:  ADDWF  30,W
+0048:  MOVWF  04
+0049:  BCF    03.7
+004A:  MOVF   00,W
+004B:  MOVWF  31
+004C:  BSF    03.5
+004D:  CLRF   06
+004E:  BCF    03.5
+004F:  MOVF   31,W
+0050:  MOVWF  06
+.................... delay_ms(500); 
+0051:  MOVLW  02
+0052:  MOVWF  31
+0053:  MOVLW  FA
+0054:  MOVWF  32
+0055:  GOTO   004
+0056:  DECFSZ 31,F
+0057:  GOTO   053
+.................... x++; 
+0058:  INCF   30,F
+.................... if(x>9) x=0; 
+0059:  MOVF   30,W
+005A:  SUBLW  09
+005B:  BTFSS  03.0
+005C:  CLRF   30
+005D:  GOTO   046
+.................... } 
+.................... } 
+....................  
+005E:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F72   HS NOWDT PUT BROWNOUT NOLVP NOCPD NOWRT NODEBUG NOPROTECT

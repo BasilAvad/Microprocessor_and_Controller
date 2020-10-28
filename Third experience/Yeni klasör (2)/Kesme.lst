@@ -1,0 +1,111 @@
+CCS PCM C Compiler, Version 5.015, 5967               27-Eki-20 19:40
+
+               Filename:   D:\2020-2021 Güz\Mikroiþlemci ve Denetleyici\Micro Uygulamalarý\Yeni klasör (2)\Kesme.lst
+
+               ROM used:   64 words (1%)
+                           Largest free fragment is 2048
+               RAM used:   6 (2%) at main() level
+                           7 (2%) worst case
+               Stack used: 1 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   01A
+0003:  NOP
+.................... #include <16F877.h> 
+.................... //////////// Standard Header file for the PIC16F877 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F877 
+....................  
+.................... #list 
+....................  
+.................... #device *=16 
+.................... #fuses HS, NOWDT, NOLVP, NOBROWNOUT, NOPROTECT, PUT, NODEBUG 
+.................... #use delay(clock=20000000) 
+0004:  MOVLW  22
+0005:  MOVWF  04
+0006:  BCF    03.7
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   017
+000A:  MOVLW  06
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  7B
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  DECFSZ 00,F
+0016:  GOTO   00A
+0017:  BCF    0A.3
+0018:  BCF    0A.4
+0019:  GOTO   036 (RETURN)
+....................  
+.................... void main() 
+001A:  MOVF   03,W
+001B:  ANDLW  1F
+001C:  MOVWF  03
+001D:  BSF    03.5
+001E:  BSF    1F.0
+001F:  BSF    1F.1
+0020:  BSF    1F.2
+0021:  BCF    1F.3
+0022:  BCF    03.7
+.................... { 
+.................... while(true) 
+.................... { 
+.................... if(!input(PIN_A0)) 
+0023:  BSF    05.0
+0024:  BCF    03.5
+0025:  BTFSC  05.0
+0026:  GOTO   031
+.................... { 
+.................... while(!input(PIN_A0)); 
+0027:  BSF    03.5
+0028:  BSF    05.0
+0029:  BCF    03.5
+002A:  BTFSS  05.0
+002B:  GOTO   027
+.................... output_toggle(PIN_B0); 
+002C:  BSF    03.5
+002D:  BCF    06.0
+002E:  MOVLW  01
+002F:  BCF    03.5
+0030:  XORWF  06,F
+.................... } 
+.................... delay_ms(700); 
+0031:  MOVLW  04
+0032:  MOVWF  21
+0033:  MOVLW  AF
+0034:  MOVWF  22
+0035:  GOTO   004
+0036:  DECFSZ 21,F
+0037:  GOTO   033
+.................... output_toggle(PIN_B1); 
+0038:  BSF    03.5
+0039:  BCF    06.1
+003A:  MOVLW  02
+003B:  BCF    03.5
+003C:  XORWF  06,F
+003D:  BSF    03.5
+003E:  GOTO   023
+.................... } 
+.................... } 
+003F:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F32   HS NOWDT PUT NOBROWNOUT NOLVP NOCPD NOWRT NODEBUG NOPROTECT

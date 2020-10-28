@@ -1,0 +1,48 @@
+
+ROM used:   95/8192 (1%)
+            95/8192 (1%) including unused fragments
+
+            0.1 Average locations per line
+            13.6 Average locations per statement
+
+RAM used:   23/368 (6%) at main() level
+            24/368 (7%) worst case
+
+Stack used: 1 worst case (1 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   18     7 100  Ortak Anot CCS Codu.c
+  671     0   0  ..\..\..\..\Program Files\PICC\Devices\16F877A.h
+----- -----
+  689     7 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     22  23    1             @delay_ms1
+0     69  73    1   125  3.8  main
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               1
+    Statements              7
+    Comments                119
+    Volume (V)              128
+    Difficulty (D)          3.3
+    Effort to implement (E) 424
+    Time to implement (T)   0 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    68
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF    91  1953  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

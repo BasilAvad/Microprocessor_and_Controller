@@ -1,0 +1,19 @@
+[PROJECT]
+Target=Kesme.hex
+Processor_Text=PIC16F877
+CCSVersion=5.015
+Compiler=PCM
+[Target Data]
+FileList=Kesme.c
+[Directories]
+Include=D:\Program Files\PICC\Devices\;D:\Program Files\PICC\Drivers\
+[Kesme.c]
+Type=4
+[mru-list]
+1=Kesme.c
+[Opened Files]
+1=Kesme.c
+2=
+[Units]
+Count=1
+1=Kesme (main)
